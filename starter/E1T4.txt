@@ -1,5 +1,15 @@
-Based on the architecture diagram, and the steps you have taken so far to upload data and access the application web service, identify at least 2 obvious poor practices as it relates to security.  Include justification.
+Based on the architecture diagram, and the steps you have taken so far to upload
+data and access the application web service, identify at least 2 obvious poor 
+practices as it relates to security.  Include justification.
 
 # Poor practice 1
+The public subnet has the web service instance, rather then the private subnet  
+which currently has nothing.  The web service instance can be moved to the 
+private subnet (the application load balancer is forwarding traffic
+to the web service instance).
 
 # Poor practice 2
+
+Given the application load balancer (ALB) is forwarding HTTP requests to the
+web server instance, the security group (WebAppSG) is overly permissive.  it
+currently has ingress rules setup for all (-1) on 0.0.0.0/0.
