@@ -1,3 +1,13 @@
-Research and analyze which of the vulnerabilities appear to be related to the code that was deployed for the environment in this project.
+Research and analyze which of the vulnerabilities appear to be related to the 
+code that was deployed for the environment in this project.
 
 Bonus - provide recommendations on how to remediate the vulnerabilities.
+
+The EC2 instance (Web Service Instance - C3) has a public facing IP address. 
+It is behind an application load balancer.  It can be remediated by moving 
+the web service instance to the private subnet.
+
+All ports for the Web Service Instance are open on the ingress and egress side 
+(0.0.0.0/0), it can be remediated by modifying ACL (access control lists) or the
+security groups (WebAppSG)
+
