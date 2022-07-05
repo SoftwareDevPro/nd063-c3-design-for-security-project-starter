@@ -1,3 +1,17 @@
 # Describe GuardDuty findings that were detected related to the brute force attack
 
+I was unable to get any findings via GuardDuty.  Research via the Udacity
+knowledge base (mentor help) and found this to be a common issue 
+(https://knowledge.udacity.com/questions/784769).  I've included screenshots
+for both GuardDuty (/w no findings) and the SSH brute force attack via hydra.
+
+E3T1_guardduty.png
+E3_ssh_attack.png
+
 # Research the AWS Guard Duty documentation page and explain how GuardDuty may have detected this attack - i.e. what was its source of information.
+
+I found the documentation for the AWS guard duty page via https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#unauthorizedaccess-ec2-sshbruteforce.
+
+Under normal operation Guard Duty gets its source of data from the VPC Flow 
+Logs (its a UnauthorizedAccess:EC2/SSHBruteForce attack).  It monitors traffic 
+specifically on port 22 (SSH configured on other ports is not monitored).
