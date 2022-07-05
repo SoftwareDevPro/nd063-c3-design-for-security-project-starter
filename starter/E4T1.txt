@@ -1,5 +1,16 @@
 
 
-# Identify 2-3 changes that can be made to our environment to prevent an ssh brute force attack from the internet.
+# Identify 2-3 changes that can be made to our environment to prevent an ssh 
+brute force attack from the internet.
 
-# Neither instance should have had access to the secret recipes bucket, in the even that instance API credentials were compromised how could we have prevented access to sensitive data.
+1. Remove access on port 22, and use AWS Systems Manager as an alternative for 
+   shell access to the EC2 instance.
+2. Creation a jump box (Bastion Host), and reconfigure the security group (SG) 
+   to only allow SSH access from the host.
+
+# Neither instance should have had access to the secret recipes bucket, in the 
+  even that instance API credentials were compromised how could we have prevented 
+  access to sensitive data.
+
+If API credentials are compromised, encryption can be used.  Thus even if the
+file is downloaded, they won't be able to read it (as it would be encrypted).
