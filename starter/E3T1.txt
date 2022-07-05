@@ -10,7 +10,8 @@ E3_ssh_attack.png
 
 # Research the AWS Guard Duty documentation page and explain how GuardDuty may have detected this attack - i.e. what was its source of information.
 
-I found the documentation for the AWS guard duty page via https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#unauthorizedaccess-ec2-sshbruteforce.
+I found the documentation for the AWS guard duty SSH brute force page 
+via https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_finding-types-ec2.html#unauthorizedaccess-ec2-sshbruteforce.
 
 Under normal operation Guard Duty gets its source of data from the VPC Flow 
 Logs (its a UnauthorizedAccess:EC2/SSHBruteForce attack).  It monitors traffic 
